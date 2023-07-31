@@ -1,0 +1,10 @@
+# Golang-specific Words
+errcheck
+errgroup
+gocognit
+gocyclo
+gofmt
+goimports
+govet
+staticcheck
+tmpl
