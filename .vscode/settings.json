@@ -1,5 +1,26 @@
 {
-    "cSpell.words": [
-        "errgroup"
-    ]
+    // スペルチェックから除外する単語をまとめたテキストファイルを指定する
+    "cSpell.customDictionaries": {
+        "app-words": {
+            "name": "app-words",
+            "path": "${workspaceRoot}/.cspell/app-words.txt",
+            "description": "Words specific to this application",
+            "addWords": true,
+            "scope": "workspace"
+        },
+        "golang-words": {
+            "name": "golang-words",
+            "path": "${workspaceRoot}/.cspell/golang-words.txt",
+            "description": "Golang Words",
+            "addWords": true,
+            "scope": "workspace"
+        },
+        "organization-words": {
+            "name": "organization-words",
+            "path": "${workspaceRoot}/.cspell/organization-words.txt",
+            "description": "Organization Words",
+            "addWords": true,
+            "scope": "workspace"
+        }
+    },
 }
