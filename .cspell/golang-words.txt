@@ -1,4 +1,5 @@
 # Golang-specific Words
+caarlos
 errcheck
 errgroup
 gocognit

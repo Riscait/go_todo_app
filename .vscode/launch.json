@@ -10,9 +10,7 @@
             "request": "launch",
             "mode": "debug",
             "program": ".",
-            "args": [
-                "18080"
-            ]
+            "envFile": "${workspaceFolder}/.env",
         }
     ]
 }

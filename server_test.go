@@ -11,7 +11,7 @@ import (
 	"golang.org/x/sync/errgroup"
 )
 
-func TestRun(t *testing.T) {
+func TestServer_Run(t *testing.T) {
 	// 利用可能なポート番号を動的に選択してリスナーを作成
 	l, err := net.Listen("tcp", ":0")
 	if err != nil {
@@ -20,9 +20,14 @@ func TestRun(t *testing.T) {
 	// 1. キャンセル可能なContextオブジェクトを作る
 	ctx, cancel := context.WithCancel(context.Background())
 	eg, ctx := errgroup.WithContext(ctx)
+	// multiplexer: 複数の入力信号を1つの信号として出力する装置
+	mux := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "Hello, %s!", r.URL.Path[1:])
+	})
 	// 2. 別goroutineでテスト対象であるrun関数を実行してHTTPサーバーを起動する
 	eg.Go(func() error {
-		return run(ctx, l)
+		s := NewServer(l, mux)
+		return s.Run(ctx)
 	})
 	// 3. エンドポイントに対してGETリクエストを送信する
 	path := "message"
