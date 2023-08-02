@@ -15,13 +15,11 @@ WORKDIR /app
 
 # アプリの依存関係をコピー
 COPY go.mod go.sum ./
-
 # 依存関係のダウンロード
 RUN go mod download
 
 # アプリのソースをバンドルする
 COPY . .
-
 RUN go build -trimpath -ldflags "-w -s" -o app
 
 # ------------------------------------------------------------------------------
@@ -30,7 +28,7 @@ RUN go build -trimpath -ldflags "-w -s" -o app
 # docker build -t Riscait/go_todo_app:${DOCKER_TAG} --target deploy ./
 FROM debian:bullseye-slim as deploy
 
-RUN apt-gen update
+RUN apt-get update
 
 COPY --from=deploy-builder /app/app .
 

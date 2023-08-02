@@ -22,3 +22,9 @@ go.work
 
 # Mac
 .DS_Store
+
+# misc
+tmp
+
+# Docker
+__debug_bin
