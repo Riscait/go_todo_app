@@ -30,7 +30,7 @@ func TestNewMux(t *testing.T) {
 		t.Fatalf("failed to read body: %v", err)
 	}
 	// レスポンスボディのチェック
-	want := `{ "status": "ok" }`
+	want := `{"status": "ok"}`
 	if string(got) != want {
 		t.Errorf("want %q, but got %q:", want, got)
 	}
