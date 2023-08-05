@@ -23,4 +23,7 @@
             "scope": "workspace"
         }
     },
+    "files.associations": {
+        "*.json.golden": "json"
+    },
 }
