@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "title": "Todo task title",
+        "status": "todo"
+    },
+    {
+        "id": 2,
+        "title": "Doing task title",
+        "status": "doing"
+    },
+    {
+        "id": 3,
+        "title": "Done task title",
+        "status": "done"
+    }
+]

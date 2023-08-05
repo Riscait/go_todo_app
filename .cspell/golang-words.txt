@@ -8,4 +8,5 @@ gofmt
 goimports
 govet
 staticcheck
+testutil
 tmpl
