@@ -44,14 +44,14 @@ func TestListTask_ServeHTTP(t *testing.T) {
 			},
 			want: want{
 				status:  http.StatusOK,
-				rspFile: "testdata/list_task/200_response.json.golden",
+				rspFile: "testdata/list_task/response/ok.json.golden",
 			},
 		},
 		"empty": {
 			tasks: []*entity.Task{},
 			want: want{
 				status:  http.StatusOK,
-				rspFile: "testdata/list_task/empty_response.json.golden",
+				rspFile: "testdata/list_task/response/empty.json.golden",
 			},
 		},
 	}

@@ -31,17 +31,17 @@ func TestAddTask_ServeHTTP(t *testing.T) {
 		want    want
 	}{
 		"ok": {
-			reqFile: "testdata/add_task/201_request.json.golden",
+			reqFile: "testdata/add_task/request/ok.json.golden",
 			want: want{
 				status:  http.StatusCreated,
-				rspFile: "testdata/add_task/201_response.json.golden",
+				rspFile: "testdata/add_task/response/ok.json.golden",
 			},
 		},
 		"validate error": {
-			reqFile: "testdata/add_task/400_request.json.golden",
+			reqFile: "testdata/add_task/request/invalid_body.json.golden",
 			want: want{
 				status:  http.StatusBadRequest,
-				rspFile: "testdata/add_task/400_response.json.golden",
+				rspFile: "testdata/add_task/response/invalid_body.json.golden",
 			},
 		},
 	}
